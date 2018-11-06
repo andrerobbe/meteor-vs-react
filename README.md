@@ -65,7 +65,7 @@ React gebruikt een eenvoudig systeem dat virtual DOM wordt genoemd. Het is een s
 <br>
 
 ### Voordelen van Meteor
-+ Makkelijk leercurve.
++ Makkelijke leercurve.
 + Intergratie tussen front-end en back-end, dus je bent klaar als je enkel Meteor gebruikt.
 + Uitstekende keuze voor back-end, zeker als beginner.
 + Meteor is een applicatie framework dat geweldig is als je alleen in Javascript wilt schrijven, omdat het zowel server-side als client-side Javascript toestaat, en de twee mixt.
@@ -132,7 +132,6 @@ Met andere woorden, het DOM is zo traag dat de Javascript die runt niet eens ech
 <br><br>
 
 **Rendering times**
-
 *Source: [blog.meteor.com](https://blog.meteor.com/comparing-performance-of-blaze-react-angular-meteor-and-angular-2-with-meteor-c650c913d3f8)*
 
 We gaan meten met een script hoe lang het duurt om een X aantal list items te laten renderen via Meteor met Blaze, of via Meteor met React.
