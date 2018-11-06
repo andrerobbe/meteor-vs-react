@@ -20,31 +20,32 @@
 <br>
 
 ## Waarom?
-Ik ben met de new technology meer over Meteor te weten gekomen, en wilde dus de vergelijking maken met React, een Javascript framework waar ik al bekend mee ben. 
+Ik ben met de new technology meer over Meteor te weten gekomen, en wilde dus de vergelijking maken met React, een Javascript framework waar ik al bekend mee ben. Achteraf gezien niet de beste keuze misschien, aangezien Meteor een full-stack framework is, terwijl React eigenlijk een front-end framework (officieël gezien een library). Het gaat dus ook deels over Blaze (Meteor's standaard) vs React.
 
 
-<br><br>
+<br>
 
 ## Meteor
 Meteor, of MeteorJS, is een *isomorphic* (zowel client als server) open-source Javascript framework geschreven met Node.js. Meteor is makkelijk te gebruiken voor snelle prototyping en creërt cross-platform code (Android, iOS, Web). Het intergreert MongoDB en gebruikt een zogenaamd Distributed Data Protocol, waardoor veranderingen in data automatisch gesynchroniseerd worden zonder enige code van de developer.
 Meteor is een full-stack framework, wat wil zeggen dat het zowel de front-end als back-end verzorgd. Het gebruikt een mix van front-end Javascript dat in de browser runt, en back-end Javascript dat op een Meteor server runt. Je kan  Meteor op zich zelf gebruiken (met Blaze als standaard templating engine), of in combinatie met Angular, React, Vue.
 
 
-<br><br>
+<br>
 
 ## React
 React, of ReactJS is officieel gezien een Javascript library, maar wordt vaak als front-end framework gezien, omdat het concureerd met Angular en Vue. Het is gemaakt door Facebook en wordt veel gebruikt voor de V in MVC (Model, View, Controller). Het is de basis van single-page of mobile apps en is speciaal ontworpen voor het maken van user interfaces. Het heeft dus niet veel hulpmiddelen die je als developer misschien noodzakkelijk acht om een applicatie te maken. Als je complexere applicaties wilt maken heb je extra libraries nodig voor state management, routing en API interactie. Hierdoor kan je wel met eender welke library werken die je voorkeur heeft om bepaalde taken uit te voeren.
 
 
-<br><br>
+<br>
 
 ## Meteor vs React
 ### Wie gebruikt wat?
 
+<br>
 <img src="img/companies.PNG" alt="" /><br>
 
 Zoals je kan zien wordt React op het moment door meer en grotere bedrijven gebruikt. Waarom is dat zo? Votes op [stackshare.io](https://stackshare.io/stackups/meteor-vs-react) laten het volgende zien:
-
+<br>
 <img src="img/pros.PNG" alt="" /><br>
 
 
@@ -85,7 +86,7 @@ React gebruikt een eenvoudig systeem dat virtual DOM wordt genoemd. Het is een s
 
 <br>
 
-Quote van [discover Meteor](ttps://www.discovermeteor.com/blog/the-state-of-meteor-part-1-what-went-wrong/)
+Quote van [Discover Meteor](https://www.discovermeteor.com/blog/the-state-of-meteor-part-1-what-went-wrong/)
 
 *From the start, the Meteor Development Group has viewed Meteor as a platform: they’d give developers a toolbox, some screws, and a bunch of wooden boards, and developers would then use these tools to build whatever they wanted, however they wanted.<br><br>
 This explains why MDG left things like file structure, routing and forms to the community. Even though these are key part of nearly every single web app out there, they’re framework-level components, not platform-level.*
@@ -113,8 +114,6 @@ This explains why MDG left things like file structure, routing and forms to the 
 <br>
 
 ### Performance
-*Source: [blog.meteor.com](https://blog.meteor.com/comparing-performance-of-blaze-react-angular-meteor-and-angular-2-with-meteor-c650c913d3f8)*
-
 Aan de developer kant qua presetaties heb ik persoonlijk wel gemerkt dat het opzetten van een Meteor project erg traag is. Ook als je eenmaal een Meteor app hebt aangemaakt duurt het lang om deze op te starten, elke keer weer opnieuw. Dit is bij gewoon een pure React app veel sneller en beter. Maar goed, dit is wel enigsinds te verwachten aangezien het over een full-stack framework gaat, t.o.v. een front-end library waar je nog veel packages voor moet downloaden. Het verschil tussen een Meteor & Blaze of een Meteor & React app is niet te merken.
 
 Qua site prestaties zou je verwachten dat React's aanpak van het veranderen van data via de component stamboom enorm inefficiënt zou zijn, i.p.v. het direct veranderen van componenten die een update nodig hebben. In het het voorbeeld hieronder, zouden er veel meer componenten veranderen dan bij Blaze het geval zou zijn. De performance is echter goed door de snelheid van het virtual DOM. Twee belangrijke aspecten daarin zijn:
@@ -123,21 +122,27 @@ Qua site prestaties zou je verwachten dat React's aanpak van het veranderen van 
 
 Met andere woorden, het DOM is zo traag dat de Javascript die runt niet eens echt meespeelt in de performance vergelijking.
 
-<img src="img/react-logic-1.PNG" alt="" />
-<img src="img/react-logic-2.PNG" alt="" />
+<br>
 
+| Voor | Na |
+| --- | --- |
+| <img src="img/react-logic-1.PNG" alt="" width="400" /> | <img src="img/react-logic-2.PNG" alt="" width="400" /> |
 
+<br><br>
+
+*Rendering times*
+*Source: [blog.meteor.com](https://blog.meteor.com/comparing-performance-of-blaze-react-angular-meteor-and-angular-2-with-meteor-c650c913d3f8)*
 We gaan meten met een script hoe lang het duurt om een X aantal list items te laten renderen via Meteor met Blaze, of via Meteor met React.
 Bij de grafiek hier onder zien we dat pas bij het aanmaken van 5000 list items of meer er echt grote verschillen ontstaan.
 
 <img src="img/rendering-script-times.PNG" alt="" /><br>
 
-Bij het opnieuw renderen van list items zijn de verschillen pas groot aan het worden bij 10.000 list items. Wat dit wil zeggen is dat als er bijvoorbeeld 15.000 list items zijn aangemaakt, 10.000 hiervan moeten geüpdate worden. Als je een applicatie hebt die zo veel items moet renderen in de browser is er een groter probleem dan het kiezen van het framework.
+Wanneer we de list items opnieuw renderen zijn de verschillen pas groot aan het worden bij 10.000 list items. Wat dit wil zeggen is dat als er bijvoorbeeld 15.000 list items zijn aangemaakt, 10.000 hiervan moeten geüpdate worden. Als je een applicatie hebt die zo veel items moet renderen in de browser is er een groter probleem dan het kiezen van het framework.
 
 <img src="img/re-rendering-script-times.PNG" alt="" /><br>
 
 
-<br>
+<br><br>
 
 ## Conclusie
 Performance is belangrijk, maar niet het belangrijkste voor het kiezen van een framework. Zowel Blaze als React zijn goed genoeg qua prestaties. De keuze gaat meer over de voorkeur van je coding style en de community erom heen (package aanbod).
