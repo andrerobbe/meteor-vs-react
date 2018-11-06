@@ -45,6 +45,7 @@ React, of ReactJS is officieel gezien een Javascript library, maar wordt vaak al
 <img src="img/companies.PNG" alt="" /><br>
 
 Zoals je kan zien wordt React op het moment door meer en grotere bedrijven gebruikt. Waarom is dat zo? Votes op [stackshare.io](https://stackshare.io/stackups/meteor-vs-react) laten het volgende zien:
+
 <br>
 <img src="img/pros.PNG" alt="" /><br>
 
@@ -54,7 +55,7 @@ Zoals je kan zien wordt React op het moment door meer en grotere bedrijven gebru
 ### Aanpassingen van Data
 React's aanpak van het doorgeven van data veranderingen is anders dan bij Blaze (Meteor). Blaze gebruikt een tracking systeem om bij te houden welke delen van het DOM overeenkomen met welke delen van de UI state. Dit betekent dat wanneer de status wijzigt (bijvoorbeeld het verwijderen van een e-mail), het exact weet welke DOM-elementen gewijzigd moeten worden. Blaze gebruikt hiervoor jQuery om dit direct aan te passen. Updates gaan van de gebeurtenis naar andere plaatsen die gewijzigd moeten worden. Hoewel deze architectuur het intuïtief maakt om te begrijpen wat opnieuw gerenderd wordt bij een wijziging, wordt de oorsprong van wijzigingen onvoorspelbaar in een grote app met onderling afhankelijke variabelen.
 
-React gebruikt een eenvoudig systeem dat virtual DOM wordt genoemd. Het is een stamboom met React-componenten, die elk een eigen staat hebben en die van de ouders bevat en overeenkomt met echte DOM-elementen. Updates stromen altijd omhoog in de componenthiërarchie en vervolgens omlaag naar de relevante knooppunten. Bij het wijzigen van de state worden alle elementen die om die status geven gewijzigd. Dit betekent dat hierdoor een groot aantal niet-gerelateerde elementen kunnen worden gewijzigd. Het diff-algoritme van React beperkt echter niet-gerelateerde wijzigingen door de minimaal mogelijke virtuele DOM-aanpassingen te berekenen die nodig zijn om de verandering in UI-status te bereiken. Pas daarna past het de echte DOM aan.
+React gebruikt een eenvoudig systeem dat virtual DOM wordt genoemd. Het is een stamboom met React-componenten, die elk een eigen staat hebben en die van de ouders bevat en overeenkomt met echte DOM-elementen. Updates stromen altijd omhoog in de componenthiërarchie en vervolgens omlaag naar de relevante knooppunten. Bij het wijzigen van de state worden alle elementen die om die status geven gewijzigd. Dit betekent dat hierdoor een groot aantal niet-gerelateerde elementen kunnen worden gewijzigd. Het diff-algoritme van React beperkt echter niet-gerelateerde wijzigingen door de minimaal mogelijke virtuele DOM-aanpassingen te berekenen die nodig zijn om de verandering in UI-status te bereiken. Pas daarna wordt het echt DOM aangepast.
 
 | Blaze | React |
 | --- | --- |
@@ -130,12 +131,14 @@ Met andere woorden, het DOM is zo traag dat de Javascript die runt niet eens ech
 
 <br><br>
 
-*Rendering times*
+**Rendering times**
+
 *Source: [blog.meteor.com](https://blog.meteor.com/comparing-performance-of-blaze-react-angular-meteor-and-angular-2-with-meteor-c650c913d3f8)*
+
 We gaan meten met een script hoe lang het duurt om een X aantal list items te laten renderen via Meteor met Blaze, of via Meteor met React.
 Bij de grafiek hier onder zien we dat pas bij het aanmaken van 5000 list items of meer er echt grote verschillen ontstaan.
 
-<img src="img/rendering-script-times.PNG" alt="" /><br>
+<img src="img/rendering-script-times.PNG" alt="" /><br><br>
 
 Wanneer we de list items opnieuw renderen zijn de verschillen pas groot aan het worden bij 10.000 list items. Wat dit wil zeggen is dat als er bijvoorbeeld 15.000 list items zijn aangemaakt, 10.000 hiervan moeten geüpdate worden. Als je een applicatie hebt die zo veel items moet renderen in de browser is er een groter probleem dan het kiezen van het framework.
 
